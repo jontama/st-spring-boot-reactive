@@ -3,5 +3,9 @@
 
 ### commit 
 - commit -m [메세지]
-- commit --amend //이전커밋수정 
+- amend 
+
+
+
+체리픽 틀정지점 변경하기
 
