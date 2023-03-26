@@ -5,7 +5,10 @@ import java.util.OptionalInt;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class StramEx5 {
+/**
+ * reduce
+ */
+public class StreamEx5 {
     public static void main(String[] args) {
         String[] strArr = {"Inheritance", "JAVA", "Lambda", "stream", "OptionalDouble", "IntStream", "count", "sum"};
 
