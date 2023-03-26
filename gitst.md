@@ -3,5 +3,5 @@
 
 ### commit 
 - commit -m [메세지]
-- amend 
+- commit --amend //이전커밋수정 
 
