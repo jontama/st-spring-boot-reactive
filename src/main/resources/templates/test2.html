@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>버튼 샘플</title>
+    <style>
+        /* 첫번째 버튼 스타일: 파란색 배경, 흰색 텍스트, 둥근 모서리 */
+        .button1 {
+            background-color: #007AFF;
+            color: #FFFFFF;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .button1:hover {
+            transform: scale(1.05);
+        }
+
+        /* 두번째 버튼 스타일: 빨간색 배경, 흰색 텍스트, 사각형 모서리 */
+        .button2 {
+            background-color: #FF3B30;
+            color: #FFFFFF;
+            border-radius: 0px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .button2:hover {
+            transform: scale(1.05);
+        }
+
+        /* 세번째 버튼 스타일: 검은색 배경, 흰색 테두리, 흰색 텍스트, 둥근 모서리 */
+        .button3 {
+            background-color: #000000;
+            color: #FFFFFF;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #FFFFFF;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .button3:hover {
+            transform: scale(1.05);
+        }
+
+        /* 네번째 버튼 스타일: 초록색 배경, 검은색 텍스트, 둥근 모서리, 그림자 */
+        .button4 {
+            background-color: #34C759;
+            color: #000000;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+        }
+        .button4:hover {
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background-color: #4CAF50;
+            color: white;
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+<button class="button1">파란색 버튼</button>
+<button class="button2">빨간색 버튼</button>
+<button class="button3">검은색 버튼</button>
+<button class="button4">초록색 버튼</button>
+</body>
+</html>

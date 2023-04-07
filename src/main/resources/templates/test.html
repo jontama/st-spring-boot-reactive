@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        nav h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav .menu-icon {
+            order: -1;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                padding: 10px;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            nav .menu-icon {
+                order: 0;
+                display: block;
+            }
+
+            nav.active ul {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 200px;
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+                transform: translateX(-220px);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            nav.active + .sidebar {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a class="menu-icon">&#9776;</a>
+    <h1>Navigation Menu</h1>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="sidebar">
+    <h2>Sidebar</h2>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+    <p>This is the sidebar content.</p>
+
+</div>
+
+<script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const nav = document.querySelector('nav ul');
+
+    menuIcon.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
