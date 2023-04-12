@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Timestamped Progress Bar</title>
+    <style>
+      #progress-bar {
+        width: 100%;
+        height: 20px;
+        border: 1px solid gray;
+        position: relative;
+        cursor: pointer;
+      }
+
+      #progress-bar span {
+        display: inline-block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: blue;
+        transition: width 0.2s ease-in-out;
+      }
+
+      #progress-bar div {
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        font-size: 14px;
+        color: gray;
+        text-align: center;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progress-bar" onclick="setPosition(event)">
+      <span style="width: 50%;"></span>
+      <div id="timestamp">00:00</div>
+    </div>
+    <script>
+      function setPosition(event) {
+        var progressBar = document.getElementById("progress-bar");
+        var span = progressBar.querySelector("span");
+        var timestamp = progressBar.querySelector("#timestamp");
+
+        var x = event.clientX - progressBar.offsetLeft;
+        var width = progressBar.clientWidth;
+        var position = Math.min(Math.max(0, x / width), 1);
+
+        span.style.width = position * 100 + "%";
+        timestamp.innerHTML = getTimeStamp(position);
+      }
+
+      function getTimeStamp(position) {
+        var totalSeconds = 60;
+        var seconds = Math.floor(totalSeconds * position);
+        var minutes = Math.floor(seconds / 60);
+        seconds %= 60;
+        return padZero(minutes) + ":" + padZero(seconds);
+      }
+
+      function padZero(number) {
+        return number.toString().padStart(2, "0");
+      }
+    </script>
+  </body>
+</html>
+
